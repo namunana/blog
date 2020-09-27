@@ -86,7 +86,11 @@ function run() {
     cd /opt/${BLOG_REPOSITORY}
 
     if [ -f "/tmp/hexo.pid" ]; then
-      kill -9 "$(cat /tmp/hexo.pid)"
+      PID="$(cat /tmp/hexo.pid)"
+      if [ -n "$PID" -a -e /proc/$PID ]; then
+        echo "结束进程 ${PID}"
+        kill -9 "${PID}"
+      fi
     fi
     hexo clean --config source/_data/next.yml
     hexo g --config source/_data/next.yml
