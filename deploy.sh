@@ -7,7 +7,7 @@ THEME_NAME="next"
 THEME_REPOSITORY="hexo-theme-next"
 
 function pull() {
-    cd /opt/test/${BLOG_REPOSITORY} && git checkout source && git pull && cd -
+    cd /opt/${BLOG_REPOSITORY} && git checkout source && git pull && cd -
 }
 function initInstaller() {
     if [[ -n "$(command -v apt-get)" ]]; then
@@ -27,27 +27,27 @@ function initInstaller() {
     fi
 }
 function initGithub() {
-    if [ ! -d "/opt/test/${BLOG_REPOSITORY}" ]; then
+    if [ ! -d "/opt/${BLOG_REPOSITORY}" ]; then
       echo "initGithub: 初始化${BLOG_REPOSITORY}"
-      git clone https://github.com/${BLOG_USERNAME}/${BLOG_REPOSITORY}.git /opt/test/${BLOG_REPOSITORY}
+      git clone https://github.com/${BLOG_USERNAME}/${BLOG_REPOSITORY}.git /opt/${BLOG_REPOSITORY}
     fi
     echo "initGithub: 切换到source分支"
     pull;
 
-    if [ ! -d "/opt/test/${BLOG_REPOSITORY}/themes/${THEME_NAME}" ]; then
+    if [ ! -d "/opt/${BLOG_REPOSITORY}/themes/${THEME_NAME}" ]; then
       echo "initGithub: 初始化${THEME_NAME}"
-      git clone https://github.com/${THEME_USERNAME}/${THEME_REPOSITORY}.git /opt/test/${BLOG_REPOSITORY}/themes/${THEME_NAME}
+      git clone https://github.com/${THEME_USERNAME}/${THEME_REPOSITORY}.git /opt/${BLOG_REPOSITORY}/themes/${THEME_NAME}
     fi
 
     if [[ $THEME_NAME == "next" ]]; then
       echo "initGithub: 初始化${THEME_NAME}"
-      cd /opt/test/${BLOG_REPOSITORY}/themes/${THEME_NAME} && git checkout v7.8.0 && cd -
-      git clone https://github.com/theme-next/theme-next-pdf /opt/test/${BLOG_REPOSITORY}/themes/next/source/lib/pdf
-      git clone https://github.com/theme-next/theme-next-pace /opt/test/${BLOG_REPOSITORY}/themes/next/source/lib/pace
+      cd /opt/${BLOG_REPOSITORY}/themes/${THEME_NAME} && git checkout v7.8.0 && cd -
+      git clone https://github.com/theme-next/theme-next-pdf /opt/${BLOG_REPOSITORY}/themes/next/source/lib/pdf
+      git clone https://github.com/theme-next/theme-next-pace /opt/${BLOG_REPOSITORY}/themes/next/source/lib/pace
     fi;
 }
 function initNpm() {
-  cd /opt/test/${BLOG_REPOSITORY}
+    cd /opt/${BLOG_REPOSITORY}
 
     NODE_VERSION=$(node -v);
     if [[ ! $NODE_VERSION =~ "v10" ]]; then
@@ -83,7 +83,7 @@ function init() {
     echo "初始化完毕, 请执行[sh deploy.sh run]命令"
 }
 function run() {
-    cd /opt/test/${BLOG_REPOSITORY}
+    cd /opt/${BLOG_REPOSITORY}
 
     if [ -f "/tmp/hexo.pid" ]; then
       kill -9 "$(cat /tmp/hexo.pid)"
