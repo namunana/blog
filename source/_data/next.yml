@@ -8,8 +8,8 @@
 
 # Site
 title: namunana
-subtitle: namunana
-description: namunana
+subtitle: "未到终局，焉知生死"
+description: "未到终局，焉知生死" 
 keywords:
 author: "namunana"
 language: zh-CN
@@ -17,7 +17,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://116.62.127.72:80
+url: http://www.namunana.cn:80
 root: /
 permalink: posts/:url.html
 permalink_defaults:
@@ -198,8 +198,8 @@ footer:
 
   # Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn
   beian:
-    enable: false
-    icp:
+    enable: true
+    icp: 粤ICP备2020097369号-1
     # The digit in the num of gongan beian.
     gongan_id:
     # The full num of gongan beian.
@@ -290,7 +290,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: /images/config/avatar.jpg
+  url: /images/config/head.png
   # If true, the avatar will be dispalyed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
@@ -305,7 +305,7 @@ site_state: true
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
   GitHub: https://github.com/namunana || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
+  E-Mail: mailto:2656642905@qq.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -328,7 +328,8 @@ links_settings:
   layout: inline
 
 links:
-  Ahaochan: http://blog.ahao.moe
+  张大律师: https://www.bilibili.com/video/BV14y4y1k71x
+  三体: https://www.bilibili.com/video/BV1H54y1y7Uu
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
@@ -390,12 +391,12 @@ tag_icon: false
 # Front-matter variable (unsupport animation).
 reward_settings:
   # If true, reward will be displayed in every article by default.
-  enable: true
-  animation: true
+  enable: false
+  animation: false
   comment: 坚持原创分享，您的支持将鼓励我继续创作!
 
 reward:
-  wechatpay: /images/config/wechatpay.jpg
+  wechatpay: /images/config/weixin.jpg
   alipay: /images/config/alipay.jpg
   #paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
